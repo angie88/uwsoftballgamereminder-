@@ -3,8 +3,8 @@ const cheerio = require('cheerio');
 
 
 var scraperController = {
-  scraper: function(req, reply){
-    req.setUrl('/');
+  scraper: function(req, res, next){
+
     const url = 'http://www.gohuskies.com/SportSelect.dbml?&DB_OEM_ID=30200&SPID=126619&SPSID=777716';
     request(url, (error, response, html) => {
       var $ = cheerio.load(html);
@@ -33,14 +33,9 @@ var scraperController = {
           scheduleArray[counter2] = {date: date, opponent: opponent, time: time};
           counter2 += 2;
         }
-        if (scheduleArray.length > 50) {
-          console.log('HEY')
-          req.schedule = scheduleArray;
-        }
-
       });
+      res.send(scheduleArray)
     });
-    return reply.continue();
   }
 }
 
