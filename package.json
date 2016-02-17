@@ -1,0 +1,25 @@
+{
+  "name": "uwsoftballgamesreminder",
+  "version": "1.0.0",
+  "description": "scrapes uw softball schedule and sends text out the day of softball game",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/angie88/uwsoftballgamereminder-.git"
+  },
+  "author": "Angie Yeh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/angie88/uwsoftballgamereminder-/issues"
+  },
+  "homepage": "https://github.com/angie88/uwsoftballgamereminder-",
+  "dependencies": {
+    "cheerio": "^0.20.0",
+    "hapi": "^13.0.0",
+    "request": "^2.69.0"
+  }
+}
